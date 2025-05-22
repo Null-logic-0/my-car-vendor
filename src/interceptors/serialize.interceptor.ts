@@ -11,9 +11,6 @@ interface ClassConstructor {
   new (...args: any[]): {};
 }
 
-export function Serialize(dto: ClassConstructor) {
-  return UseInterceptors(new SerializeInterceptor(dto));
-}
 export class SerializeInterceptor implements NestInterceptor {
   constructor(private dto: ClassConstructor) {}
   intercept(context: ExecutionContext, handler: CallHandler): Observable<any> {
@@ -25,4 +22,8 @@ export class SerializeInterceptor implements NestInterceptor {
       }),
     );
   }
+}
+
+export function Serialize(dto: ClassConstructor) {
+  return UseInterceptors(new SerializeInterceptor(dto));
 }
