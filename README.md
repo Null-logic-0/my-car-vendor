@@ -1,42 +1,50 @@
 📦 my-car-vendor
-
-A simple NestJS application using SQLite with built-in authentication and reporting features. Built as a foundational backend for managing users and car reports.
-
+A simple and extensible NestJS + SQLite application using TypeORM. Features include authentication, user management, and reporting with location and pricing filters — ideal for car dealership or marketplace backends.
 
 ✨ Features
 ✅ Authentication
 
-Signup, signin with session cookies
+Signup/signin using session cookies
 
-Secure password hashing
+Passwords hashed securely
 
 👤 User Management
 
 Get all users
 
-Update user
+Update and delete users
 
-Delete user
+🚗 Car Report System
 
-🚗 Car Report Management
+Create reports
 
-Create and retrieve car reports
-
-Filter reports by:
+Query reports filtered by:
 
 Year
 
 Price
 
-Latitude & Longitude proximity
+Latitude & Longitude
 
-📦 SQLite database for easy setup
+⚙️ TypeORM Integration
 
-⚙️ ValidationPipe for request data validation
+Entity-based data modeling (User, Report)
 
-🔐 Session-based auth using cookie-session
+Environment-based configuration (.env)
 
-📁 Environment-specific configs (.env.development, .env.test, etc.)
+CLI support for migrations
+
+🗃️ Database
+
+SQLite (development & test)
+
+🧪 Validation
+
+Global ValidationPipe to whitelist and validate input
+
+🔐 Session Management
+
+cookie-session based session handling
 
 📂 Tech Stack
 Backend: NestJS
@@ -49,10 +57,11 @@ Validation: class-validator
 
 Session: cookie-session
 
-🚀 Getting Started
 
+🛠 Setup
 # Install dependencies
     npm install
 
-# Run in development
+# Run the app in development mode
     npm run start:dev
+
